@@ -15,6 +15,43 @@
 
 See more info at https://academicpages.github.io/
 
+## Mynote: Running locally for windows
+1. download ruby
+https://rubyinstaller.org for Ruby install package（x64）
+choose Devkit package（e.g. Ruby+Devkit 3.x.x-x64）
+check “Add Ruby executables to your PATH”， and install MSYS2 
+
+2. install Jekyll and Bundler
+open Windows cmd
+```bash
+    gem install jekyll bundler
+```
+3. cd to your repository locally 
+```bash
+    bundle install
+    bundle exec jekyll serve
+```
+if "Error:  No source of timezone data could be found."
+because windows don't have unix /usr/share/zoneinfo, thus it the local zoneinfo could not be found
+solutions:
+open cmd and install tzinfo-data
+```bash
+    gem install tzinfo-data
+```
+then in your repository Gemfile
+add gem 'tzinfo-data'
+then save and run in cmd
+```bash
+    bundle install
+    bundle exec jekyll serve
+```
+
+4. the cmd shows 
+Server address: http://127.0.0.1:4000/
+Server running... press ctrl-c to stop.
+use your explorer visiting "http://localhost:4000"
+and you will see the page
+
 ## Running locally
 
 When you are initially working on your website, it is very useful to be able to preview the changes locally before pushing them to GitHub. To work locally you will need to:
